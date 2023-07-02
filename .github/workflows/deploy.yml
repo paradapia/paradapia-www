@@ -39,6 +39,6 @@ jobs:
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: "clear-pig-16"
+          project: "radapix"
           entrypoint: server/index.ts
           root: .output
