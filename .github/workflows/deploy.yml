@@ -1,9 +1,7 @@
 name: Deploy
 on:
   push:
-    branches: main
   pull_request:
-    branches: main
 
 jobs:
   deploy:
@@ -25,11 +23,19 @@ jobs:
         uses: pnpm/action-setup@v2.2.4
         with:
           version: v8.6.5
+      - name: Cache node_modules
+        uses: actions/cache@v3
+        id: node_modules_cache_id
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/pnpm-lock.yaml }}
       - name: Install deps
+        if: ${{ steps.node_modules_cache_id.outputs.cache-hit != 'true' }}
         run: pnpm i
       - name: Build step
         run: NITRO_PRESET=deno-deploy pnpm run build
-
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
