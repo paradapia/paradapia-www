@@ -5,7 +5,7 @@ import Header from "../components/website/Header.vue"
   <div>
     <Header />
     <div>
-      Hello Paradapia!
+      Hello Paradapia!!
     </div>
   </div>
 </template>
