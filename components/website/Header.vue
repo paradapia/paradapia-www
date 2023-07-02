@@ -1,7 +1,7 @@
 <template>
-  <header class="sticky top-0">
+  <header class="sticky top-0 bg-teal-500">
     <div>
-      Paradapia
+      Radapix
     </div>
   </header>
 </template>
