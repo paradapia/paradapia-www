@@ -10,7 +10,6 @@ const data = reactive({
 
 <template>
   <Layout>
-    {{ data.isLoginMode }}
     <div class="text-center">
       <div :class="{
         'hidden': !data.isLoginMode,
@@ -21,7 +20,7 @@ const data = reactive({
         </div>
       </div>
       <div :class="{
-        'hidden': false//isLoginMode,
+        'hidden': data.isLoginMode,
       }">
         <div class="text-2xl">Sign up</div>
         <div>
