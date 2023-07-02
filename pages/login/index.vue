@@ -10,7 +10,7 @@ const isLoginMode = ref(true) // Login / Sign up
   <Layout>
     <div class="text-center">
       <div :class="{
-        'hidden': false//!isLoginMode.value,
+        'hidden': !isLoginMode.value,
       }">
         <div class="text-2xl">Login</div>
         <div>
