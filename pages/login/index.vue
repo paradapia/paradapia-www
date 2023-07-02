@@ -3,7 +3,7 @@ import { ref } from 'vue'
 import Link from "../../components/ui/Link.vue"
 import Layout from "../../layouts/page.vue"
 
-const isLoginMode = ref(true) // Login / Sign up
+const isLoginMode = ref(false) // Login / Sign up
 </script>
 
 <template>
