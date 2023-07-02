@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import Header from "../components/website/Header.vue"
+definePageMeta({
+  layout: 'page',
+})
 </script>
 
 <template>
   <div>
-    <Header />
     <div class="text-center">
       <div>Radapixへようこそ!</div>
     </div>
