@@ -7,7 +7,10 @@ import Layout from "../../layouts/page.vue"
 const data = reactive({
   isLoginMode: true, // Login / Sign up
 })
-
+const values = reactive({
+  userId: "",
+  password: ""
+});
 const login = () => {
   alert("ToDo")
 }
@@ -15,6 +18,8 @@ const login = () => {
 
 <template>
   <Layout>
+    {{ values.userId }}
+    {{ values.password }}
     <div class="text-center bg-white">
       <div :class="{
         'hidden': !data.isLoginMode,
@@ -23,11 +28,11 @@ const login = () => {
         <div>
           <div>
             <label>User ID</label>
-            <input type="text" placeholder="UserID" />
+            <input type="text" placeholder="UserID" v-model="values.userId"/>
           </div>
           <div>
             <label>Password</label>
-            <input type="password" placeholder="Password" />
+            <input type="password" placeholder="Password" v-model="values.password" />
           </div>
           <div>
             <Button @click="login">Login</Button>
