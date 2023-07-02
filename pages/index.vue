@@ -5,8 +5,8 @@ import Header from "../components/website/Header.vue"
 <template>
   <div>
     <Header />
-    <div>
-      <div></div>
+    <div class="text-center">
+      <div>Radapixへようこそ!</div>
     </div>
   </div>
 </template>
