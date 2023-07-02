@@ -18,7 +18,7 @@ const isLoginMode = ref(true) // Login / Sign up
       <div v-show="!isLoginMode.value">
         <div class="text-2xl">Sign up</div>
         <div>
-          または<a @click="isLoginMode.value = false"><Link>ログイン</Link></a>
+          または<a @click="isLoginMode.value = true"><Link>ログイン</Link></a>
         </div>
       </div>
     </div>
