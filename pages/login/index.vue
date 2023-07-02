@@ -1,21 +1,23 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { reactive } from 'vue'
 import Link from "../../components/ui/Link.vue"
 import Layout from "../../layouts/page.vue"
 
-const isLoginMode = ref(true) // Login / Sign up
+const data = reactive({
+  isLoginMode: true, // Login / Sign up
+})
 </script>
 
 <template>
   <Layout>
-    {{ isLoginMode }}
+    {{ data.isLoginMode }}
     <div class="text-center">
       <div :class="{
-        'hidden': !isLoginMode,
+        'hidden': !data.isLoginMode,
       }">
         <div class="text-2xl">Login</div>
         <div>
-          または<a @click="isLoginMode.value = false"><Link>新規登録</Link></a>
+          または<a @click="data.isLoginMode = false"><Link>新規登録</Link></a>
         </div>
       </div>
       <div :class="{
@@ -23,7 +25,7 @@ const isLoginMode = ref(true) // Login / Sign up
       }">
         <div class="text-2xl">Sign up</div>
         <div>
-          または<a @click="isLoginMode.value = true"><Link>ログイン</Link></a>
+          または<a @click="data.isLoginMode = true"><Link>ログイン</Link></a>
         </div>
       </div>
     </div>
